@@ -1,0 +1,24 @@
+[2022-09-14T21:02:32.335] [ERROR] cheese - Cheese is too ripe!
+[2022-09-14T21:02:32.339] [FATAL] cheese - Cheese was breeding ground for listeria.
+[2022-09-14T21:03:59.939] [ERROR] cheese - ReferenceError: d is not defined
+    at exports.login (/Users/apple/manish_node/api/test/controllers/user.js:4:1)
+    at exports.Manager.execute (/Users/apple/manish_node/api/test/node_modules/@hapi/hapi/lib/toolkit.js:57:29)
+    at Object.internals.handler (/Users/apple/manish_node/api/test/node_modules/@hapi/hapi/lib/handler.js:46:48)
+    at exports.execute (/Users/apple/manish_node/api/test/node_modules/@hapi/hapi/lib/handler.js:31:36)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Request._lifecycle (/Users/apple/manish_node/api/test/node_modules/@hapi/hapi/lib/request.js:371:32)
+    at async Request._execute (/Users/apple/manish_node/api/test/node_modules/@hapi/hapi/lib/request.js:281:9)
+[2022-09-14T21:06:02.520] [ERROR] cheese - Cheese is too ripe!
+[2022-09-14T21:06:02.537] [FATAL] cheese - Cheese was breeding ground for listeria.
+[2022-09-14T21:11:12.722] [ERROR] cheese - Cheese is too ripe!
+[2022-09-14T21:11:12.726] [FATAL] cheese - Cheese was breeding ground for listeria.
+[2022-09-14T21:16:27.319] [ERROR] cheese - Cheese is too ripe!
+[2022-09-14T21:16:27.348] [FATAL] cheese - Cheese was breeding ground for listeria.
+[2022-09-14T21:21:14.942] [ERROR] cheese - Cheese is too ripe!
+[2022-09-14T21:21:14.947] [FATAL] cheese - Cheese was breeding ground for listeria.
+[2022-09-14T21:24:01.970] [ERROR] cheese - Cheese is too ripe!
+[2022-09-14T21:24:01.981] [FATAL] cheese - Cheese was breeding ground for listeria.
+[2022-09-14T21:26:48.583] [ERROR] cheese - Cheese is too ripe!
+[2022-09-14T21:26:48.590] [FATAL] cheese - Cheese was breeding ground for listeria.
+[2022-09-14T21:49:20.133] [ERROR] cheese - Cheese is too ripe!
+[2022-09-14T21:49:20.143] [FATAL] cheese - Cheese was breeding ground for listeria.

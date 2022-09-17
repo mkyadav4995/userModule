@@ -1,0 +1,310 @@
+{
+    "swagger": "2.0",
+    "host": "localhost:3008",
+    "basePath": "/",
+    "schemes": [
+        "http"
+    ],
+    "info": {
+        "title": "TEST",
+        "version": "1.0"
+    },
+    "securityDefinitions": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    },
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "tags": [],
+    "paths": {
+        "/users": {
+            "get": {
+                "summary": "get users",
+                "operationId": "getUsers",
+                "description": "admin can view all users",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "default": "en",
+                        "name": "language",
+                        "in": "header",
+                        "required": false
+                    },
+                    {
+                        "type": "string",
+                        "default": 0,
+                        "name": "utcoffset",
+                        "in": "header",
+                        "required": false
+                    },
+                    {
+                        "type": "string",
+                        "description": "Token to identify user who is performing the action",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "name": "name",
+                        "in": "query",
+                        "required": false
+                    },
+                    {
+                        "type": "string",
+                        "name": "phoneNumber",
+                        "in": "query",
+                        "required": false
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user"
+                ],
+                "responses": {
+                    "default": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Successful"
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "summary": "login",
+                "operationId": "postLogin",
+                "description": "by using email and password user can login",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "default": "en",
+                        "name": "language",
+                        "in": "header",
+                        "required": false
+                    },
+                    {
+                        "type": "string",
+                        "default": 0,
+                        "name": "utcoffset",
+                        "in": "header",
+                        "required": false
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Model1"
+                        }
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user"
+                ],
+                "responses": {
+                    "default": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Successful"
+                    }
+                }
+            }
+        },
+        "/user": {
+            "post": {
+                "summary": "create user",
+                "operationId": "postUser",
+                "description": "admin can create new user",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "default": "en",
+                        "name": "language",
+                        "in": "header",
+                        "required": false
+                    },
+                    {
+                        "type": "string",
+                        "default": 0,
+                        "name": "utcoffset",
+                        "in": "header",
+                        "required": false
+                    },
+                    {
+                        "type": "string",
+                        "description": "Token to identify user who is performing the action",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Model2"
+                        }
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user"
+                ],
+                "responses": {
+                    "default": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Successful"
+                    }
+                }
+            },
+            "patch": {
+                "summary": "update user",
+                "operationId": "patchUser",
+                "description": "admin can update user data",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "default": "en",
+                        "name": "language",
+                        "in": "header",
+                        "required": false
+                    },
+                    {
+                        "type": "string",
+                        "default": 0,
+                        "name": "utcoffset",
+                        "in": "header",
+                        "required": false
+                    },
+                    {
+                        "type": "string",
+                        "description": "Token to identify user who is performing the action",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Model3"
+                        }
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user"
+                ],
+                "responses": {
+                    "default": {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Successful"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Model1": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "x-format": {
+                        "email": true
+                    }
+                },
+                "password": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "email",
+                "password"
+            ]
+        },
+        "Model2": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string",
+                    "x-format": {
+                        "email": true
+                    }
+                },
+                "password": {
+                    "type": "string"
+                },
+                "phoneNumber": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "email",
+                "password",
+                "phoneNumber"
+            ]
+        },
+        "Model3": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "phoneNumber": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "number",
+                    "description": "1 active, 0 inactive"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        }
+    }
+}
